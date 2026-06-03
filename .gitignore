@@ -1,0 +1,9 @@
+__pycache__/
+*.pyc
+.env
+*.mp4
+*.yuv
+*.png
+*.json
+*.txt.tmp
+.DS_Store

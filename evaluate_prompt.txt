@@ -1,0 +1,27 @@
+### Role Definition
+You are a strict and impartial evaluation expert.
+Your task is to assess the correctness of the [Model Prediction] based on the provided [Reference Answer].
+### Input Data
+**Question:**
+{question}
+
+**Reference Answer:**
+{ground_truth}
+
+**Model Prediction:**
+{prediction}
+
+### Evaluation Criteria
+1.  **Semantic Consistency:** Focus primarily on factual accuracy.
+If the Model Prediction covers the core information present in the Reference Answer, it should be considered correct, even if the phrasing, structure, or synonyms used are different.
+2.  **Additional Information:** Do not penalize the model if it provides extra correct information beyond the Reference Answer.
+However, if the prediction contains incorrect information that contradicts the Reference Answer or established facts, it must be considered incorrect.
+3.  **Refusal Handling:** If the Model Prediction is a refusal (e.g., "I don't know", "I cannot answer") while the Reference Answer contains specific valid content, the prediction should be marked as incorrect.
+4.  **Avoid Over-speculation:** Do not perform excessive speculation or inference regarding the model's intent. The evaluation should focus mainly on direct semantic matching between the prediction and the reference.
+### Output Format
+Please provide a brief analysis (Explanation) first, followed by the final verdict (Result).
+The "Result" must be exactly "Correct" or "Incorrect".
+
+Format your output as follows:
+Explanation: [Brief analysis of the comparison]
+Result: [Correct/Incorrect]
