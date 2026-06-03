@@ -203,27 +203,6 @@ If you use a different encoding FPS, pass the same value to `get_frames.py --fps
 
 This step generates Kvazaar ROI maps, converts the shared source frames to YUV, runs Kvazaar ROI encoding, and muxes the encoded stream to MP4.
 
-Dry run first:
-
-```bash
-python ZocoStream/batch_process_robust.py \
-  --csv_path /path/to/datasets_with_original_index.csv \
-  --roi_root /path/to/roi_root \
-  --baseline_root /path/to/baseline_root \
-  --kvazaar_bin /path/to/kvazaar \
-  --gen_script ZocoStream/gen_kvazaar_roi.py \
-  --encode_fps 30 \
-  --target_seconds 5 \
-  --start_img_idx 1 \
-  --tmp_dir /tmp \
-  --gamma 3 \
-  --resolution 1920x1080 \
-  --bitrate 200 \
-  --dry_run
-```
-
-Run encoding by removing `--dry_run`.
-
 Multiple bitrates are supported with one shared target resolution:
 
 ```bash
