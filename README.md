@@ -3,7 +3,7 @@
 ## TODO List
 
 - [ ] ReCapABR
-- [x] ZocoStream
+- [x] ZeCoStream
 - [x] DeViBench
 
 ## Repository Layout
@@ -13,18 +13,34 @@
 |-- README.md
 |-- answer_prompt.txt
 |-- evaluate_prompt.txt
-`-- ZocoStream/
-    |-- sampling.py
-    |-- generate_roi.py
-    |-- get_frames.py
-    |-- gen_kvazaar_roi.py
-    |-- batch_process_robust.py
-    `-- requirements.txt
+|-- ZeCoStream/
+|   |-- sampling.py
+|   |-- generate_roi.py
+|   |-- get_frames.py
+|   |-- gen_kvazaar_roi.py
+|   |-- batch_process_robust.py
+|    -- requirements.txt
+ -- ReCapABR/
+	|-- sim_test/
+	|	|-- sim_send/
+	|	|	|-- sim_sender_test.c
+	|	|	|-- confidence.c
+	|	|	|-- confidence.csv
+	|	|	...
+	|	...
+	...
 ```
 
 - `answer_prompt.txt`: prompt used to generate the final answer for a video question.
 - `evaluate_prompt.txt`: prompt used to judge whether a model prediction matches the reference answer.
-- `ZocoStream/`: cleaned release version of the ROI prediction and ROI encoding pipeline.
+- `ZeCoStream/`: cleaned release version of the ROI prediction and ROI encoding pipeline.
+- ReCapABR is implemented based on [**razor**](https://github.com/yuanrongxi/razor) repository. And the core modifications are in the directory ```ReCapABR/sim_test/sim_send```:
+
+  - ```sim_sender_test.c``` - It sends packets at a given bitrate. The function ```try_send_video``` implements how to determine the bitrate.
+
+  - ```confidence.c``` - According to the model's confidence, a minimal bitrate sufficient to answering the question in the class instance ```ConfidenceController::AdjustBitrate```.
+
+  - ```confidence.csv``` - The offline data of the confidence when the model answers the questions. 
 
 ## Requirements
 
@@ -34,7 +50,7 @@
 - Python packages:
 
 ```bash
-pip install -r ZocoStream/requirements.txt
+pip install -r ZeCoStream/requirements.txt
 ```
 
 ## Prepare DeViBench Data
@@ -45,11 +61,11 @@ Follow the DeViBench instructions to download StreamingBench and get `datasets.c
 https://github.com/pku-netvideo/DeViBench
 ```
 
-## ZocoStream Video Encoding Pipeline
+## ZeCoStream Video Encoding Pipeline
 
-ZocoStream gets feedback region's bounding-box from the model, converts it into Kvazaar ROI maps, and produces ROI-encoded videos. Dataset paths and output paths are passed from the command line.
+ZeCoStream gets feedback region's bounding-box from the model, converts it into Kvazaar ROI maps, and produces ROI-encoded videos. Dataset paths and output paths are passed from the command line.
 
-Run the following commands from the repository root. The examples below call scripts under `ZocoStream/` directly.
+Run the following commands from the repository root. The examples below call scripts under `ZeCoStream/` directly.
 
 ### File Structure
 The downloaded StreamingBench video folder is referred to as `video_root` in the commands below. It should contain:
@@ -137,7 +153,7 @@ You can adjust the encoding FPS for different encoding settings. If you change `
 ### 1. Sample frames at 2 FPS
 
 ```bash
-python ZocoStream/sampling.py \
+python ZeCoStream/sampling.py \
   --csv /path/to/datasets_with_original_index.csv \
   --base-video-dir /path/to/video_root \
   --output-dir /path/to/roi_root \
@@ -160,7 +176,7 @@ export ARK_API_KEY=your_key_here
 You can also pass it directly with `--api-key`.
 
 ```bash
-python ZocoStream/generate_roi.py \
+python ZeCoStream/generate_roi.py \
   --csv /path/to/datasets_with_original_index.csv \
   --roi-root /path/to/roi_root \
   --frames-expected 16 \
@@ -182,7 +198,7 @@ To make this folder match `q_<original_index>`, run ROI prediction on the origin
 ### 3. Extract shared source frames for encoding
 
 ```bash
-python ZocoStream/get_frames.py \
+python ZeCoStream/get_frames.py \
   --csv /path/to/datasets_with_original_index.csv \
   --video_root /path/to/video_root \
   --baseline_root /path/to/baseline_root \
@@ -206,12 +222,12 @@ This step generates Kvazaar ROI maps, converts the shared source frames to YUV, 
 Multiple bitrates are supported with one shared target resolution:
 
 ```bash
-python ZocoStream/batch_process_robust.py \
+python ZeCoStream/batch_process_robust.py \
   --csv_path /path/to/datasets_with_original_index.csv \
   --roi_root /path/to/roi_root \
   --baseline_root /path/to/baseline_root \
   --kvazaar_bin /path/to/kvazaar \
-  --gen_script ZocoStream/gen_kvazaar_roi.py \
+  --gen_script ZeCoStream/gen_kvazaar_roi.py \
   --encode_fps 30 \
   --target_seconds 5 \
   --gamma 3 \

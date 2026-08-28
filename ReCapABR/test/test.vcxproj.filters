@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="unit">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="trendline_test.c">
+      <Filter>unit</Filter>
+    </ClCompile>
+    <ClCompile Include="aimd_test.c">
+      <Filter>unit</Filter>
+    </ClCompile>
+    <ClCompile Include="inter_arrival_test.c">
+      <Filter>unit</Filter>
+    </ClCompile>
+    <ClCompile Include="overuse_detector_test.c">
+      <Filter>unit</Filter>
+    </ClCompile>
+    <ClCompile Include="common_test.c">
+      <Filter>unit</Filter>
+    </ClCompile>
+    <ClCompile Include="sender_bandwidth_estimator_test.c">
+      <Filter>unit</Filter>
+    </ClCompile>
+    <ClCompile Include="sender_history_test.c">
+      <Filter>unit</Filter>
+    </ClCompile>
+    <ClCompile Include="ack_bitrate_estimator_test.c">
+      <Filter>unit</Filter>
+    </ClCompile>
+    <ClCompile Include="delay_base_bwe_test.c">
+      <Filter>unit</Filter>
+    </ClCompile>
+    <ClCompile Include="interval_budget.c">
+      <Filter>unit</Filter>
+    </ClCompile>
+    <ClCompile Include="pacer_queue_test.c">
+      <Filter>unit</Filter>
+    </ClCompile>
+    <ClCompile Include="pace_sender_test.c">
+      <Filter>unit</Filter>
+    </ClCompile>
+    <ClCompile Include="unwrapper_test.c">
+      <Filter>unit</Filter>
+    </ClCompile>
+    <ClCompile Include="rate_stat_test.c">
+      <Filter>unit</Filter>
+    </ClCompile>
+    <ClCompile Include="remote_bitrate_estimator_test.c">
+      <Filter>unit</Filter>
+    </ClCompile>
+    <ClCompile Include="loss_statistics_test.c">
+      <Filter>unit</Filter>
+    </ClCompile>
+    <ClCompile Include="windowed_filter_test.c">
+      <Filter>unit</Filter>
+    </ClCompile>
+    <ClCompile Include="bbr_bandwidth_sampler_test.c">
+      <Filter>unit</Filter>
+    </ClCompile>
+    <ClCompile Include="bbr_controller_test.c">
+      <Filter>unit</Filter>
+    </ClCompile>
+    <ClCompile Include="bbr_receiver_test.c">
+      <Filter>unit</Filter>
+    </ClCompile>
+    <ClCompile Include="skiplist_test.c">
+      <Filter>unit</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="test.h">
+      <Filter>unit</Filter>
+    </ClInclude>
+    <ClInclude Include="common_test.h">
+      <Filter>unit</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Makefile">
+      <Filter>Source Files</Filter>
+    </None>
+  </ItemGroup>
+</Project>

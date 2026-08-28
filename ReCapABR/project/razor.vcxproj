@@ -1,0 +1,169 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{08200605-BF0E-4C36-AEF2-C06D7254E533}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>razor</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\common;..\estimator;..\pacing;..\cc;..\bbr;..\remb;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\common;..\estimator;..\pacing;..\cc;..\bbr;..\remb;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\bbr\bbr_bandwidth_sample.c" />
+    <ClCompile Include="..\bbr\bbr_common.c" />
+    <ClCompile Include="..\bbr\bbr_controller.c" />
+    <ClCompile Include="..\bbr\bbr_feedback_adpater.c" />
+    <ClCompile Include="..\bbr\bbr_loss_rate_filter.c" />
+    <ClCompile Include="..\bbr\bbr_pacer.c" />
+    <ClCompile Include="..\bbr\bbr_receiver.c" />
+    <ClCompile Include="..\bbr\bbr_rtt_stats.c" />
+    <ClCompile Include="..\bbr\bbr_sender.c" />
+    <ClCompile Include="..\bbr\windowed_filter.c" />
+    <ClCompile Include="..\cc\razor_api.c" />
+    <ClCompile Include="..\cc\razor_log.c" />
+    <ClCompile Include="..\cc\receiver_congestion_controller.c" />
+    <ClCompile Include="..\cc\sender_congestion_controller.c" />
+    <ClCompile Include="..\common\cf_crc32.c" />
+    <ClCompile Include="..\common\cf_hex.c" />
+    <ClCompile Include="..\common\cf_list.c" />
+    <ClCompile Include="..\common\cf_skiplist.c" />
+    <ClCompile Include="..\common\cf_stream.c" />
+    <ClCompile Include="..\common\cf_unwrapper.c" />
+    <ClCompile Include="..\common\platform\windows\mscc.c" />
+    <ClCompile Include="..\estimator\ack_bitrate_estimator.c" />
+    <ClCompile Include="..\estimator\aimd_rate_control.c" />
+    <ClCompile Include="..\estimator\bitrate_controller.c" />
+    <ClCompile Include="..\estimator\cc_loss_stat.c" />
+    <ClCompile Include="..\estimator\delay_base_bwe.c" />
+    <ClCompile Include="..\estimator\estimator_common.c" />
+    <ClCompile Include="..\estimator\cc_feedback_adapter.c" />
+    <ClCompile Include="..\estimator\inter_arrival.c" />
+    <ClCompile Include="..\estimator\kalman_filter.c" />
+    <ClCompile Include="..\estimator\overuse_detector.c" />
+    <ClCompile Include="..\estimator\rate_stat.c" />
+    <ClCompile Include="..\estimator\remote_bitrate_estimator.c" />
+    <ClCompile Include="..\estimator\remote_estimator_proxy.c" />
+    <ClCompile Include="..\estimator\sender_bandwidth_estimator.c" />
+    <ClCompile Include="..\estimator\sender_history.c" />
+    <ClCompile Include="..\estimator\trendline.c" />
+    <ClCompile Include="..\pacing\alr_detector.c" />
+    <ClCompile Include="..\pacing\interval_budget.c" />
+    <ClCompile Include="..\pacing\pacer_queue.c" />
+    <ClCompile Include="..\pacing\pace_sender.c" />
+    <ClCompile Include="..\remb\remb_receiver.c" />
+    <ClCompile Include="..\remb\remb_sender.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\bbr\bbr_bandwidth_sample.h" />
+    <ClInclude Include="..\bbr\bbr_common.h" />
+    <ClInclude Include="..\bbr\bbr_controller.h" />
+    <ClInclude Include="..\bbr\bbr_feedback_adpater.h" />
+    <ClInclude Include="..\bbr\bbr_loss_rate_filter.h" />
+    <ClInclude Include="..\bbr\bbr_pacer.h" />
+    <ClInclude Include="..\bbr\bbr_receiver.h" />
+    <ClInclude Include="..\bbr\bbr_rtt_stats.h" />
+    <ClInclude Include="..\bbr\bbr_sender.h" />
+    <ClInclude Include="..\bbr\windowed_filter.h" />
+    <ClInclude Include="..\cc\razor_api.h" />
+    <ClInclude Include="..\cc\razor_callback.h" />
+    <ClInclude Include="..\cc\razor_log.h" />
+    <ClInclude Include="..\cc\receiver_congestion_controller.h" />
+    <ClInclude Include="..\cc\sender_congestion_controller.h" />
+    <ClInclude Include="..\common\cf_crc32.h" />
+    <ClInclude Include="..\common\cf_hex.h" />
+    <ClInclude Include="..\common\cf_list.h" />
+    <ClInclude Include="..\common\cf_platform.h" />
+    <ClInclude Include="..\common\cf_skiplist.h" />
+    <ClInclude Include="..\common\cf_stream.h" />
+    <ClInclude Include="..\common\cf_unwrapper.h" />
+    <ClInclude Include="..\estimator\ack_bitrate_estimator.h" />
+    <ClInclude Include="..\estimator\aimd_rate_control.h" />
+    <ClInclude Include="..\estimator\bitrate_controller.h" />
+    <ClInclude Include="..\estimator\cc_loss_stat.h" />
+    <ClInclude Include="..\estimator\delay_base_bwe.h" />
+    <ClInclude Include="..\estimator\estimator_common.h" />
+    <ClInclude Include="..\estimator\inter_arrival.h" />
+    <ClInclude Include="..\estimator\kalman_filter.h" />
+    <ClInclude Include="..\estimator\overuse_detector.h" />
+    <ClInclude Include="..\estimator\rate_stat.h" />
+    <ClInclude Include="..\estimator\remote_bitrate_estimator.h" />
+    <ClInclude Include="..\estimator\remote_estimator_proxy.h" />
+    <ClInclude Include="..\estimator\sender_bandwidth_estimator.h" />
+    <ClInclude Include="..\estimator\sender_history.h" />
+    <ClInclude Include="..\estimator\trendline.h" />
+    <ClInclude Include="..\pacing\alr_detector.h" />
+    <ClInclude Include="..\pacing\interval_budget.h" />
+    <ClInclude Include="..\pacing\pacer_queue.h" />
+    <ClInclude Include="..\pacing\pace_sender.h" />
+    <ClInclude Include="..\remb\remb_receiver.h" />
+    <ClInclude Include="..\remb\remb_sender.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

@@ -1,0 +1,291 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="common">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="common\mscc">
+      <UniqueIdentifier>{b1337c96-939d-499e-80cd-74c113525801}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="estimator">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="pacing">
+      <UniqueIdentifier>{83eb2e2e-78c1-45ec-a967-4145fd0d3fd3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="cc">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="bbr">
+      <UniqueIdentifier>{430648d5-f6bb-4094-96e2-8db2d13c28be}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="remb">
+      <UniqueIdentifier>{95dd9241-d15b-4e9b-9104-4bc73ffb4507}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\common\cf_crc32.c">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\common\cf_hex.c">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\common\cf_list.c">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\common\cf_skiplist.c">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\common\cf_stream.c">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\common\cf_unwrapper.c">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\common\platform\windows\mscc.c">
+      <Filter>common\mscc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\estimator\inter_arrival.c">
+      <Filter>estimator</Filter>
+    </ClCompile>
+    <ClCompile Include="..\estimator\trendline.c">
+      <Filter>estimator</Filter>
+    </ClCompile>
+    <ClCompile Include="..\estimator\kalman_filter.c">
+      <Filter>estimator</Filter>
+    </ClCompile>
+    <ClCompile Include="..\estimator\aimd_rate_control.c">
+      <Filter>estimator</Filter>
+    </ClCompile>
+    <ClCompile Include="..\estimator\overuse_detector.c">
+      <Filter>estimator</Filter>
+    </ClCompile>
+    <ClCompile Include="..\estimator\remote_estimator_proxy.c">
+      <Filter>estimator</Filter>
+    </ClCompile>
+    <ClCompile Include="..\estimator\sender_bandwidth_estimator.c">
+      <Filter>estimator</Filter>
+    </ClCompile>
+    <ClCompile Include="..\estimator\bitrate_controller.c">
+      <Filter>estimator</Filter>
+    </ClCompile>
+    <ClCompile Include="..\estimator\sender_history.c">
+      <Filter>estimator</Filter>
+    </ClCompile>
+    <ClCompile Include="..\estimator\ack_bitrate_estimator.c">
+      <Filter>estimator</Filter>
+    </ClCompile>
+    <ClCompile Include="..\estimator\delay_base_bwe.c">
+      <Filter>estimator</Filter>
+    </ClCompile>
+    <ClCompile Include="..\pacing\interval_budget.c">
+      <Filter>pacing</Filter>
+    </ClCompile>
+    <ClCompile Include="..\pacing\alr_detector.c">
+      <Filter>pacing</Filter>
+    </ClCompile>
+    <ClCompile Include="..\pacing\pacer_queue.c">
+      <Filter>pacing</Filter>
+    </ClCompile>
+    <ClCompile Include="..\pacing\pace_sender.c">
+      <Filter>pacing</Filter>
+    </ClCompile>
+    <ClCompile Include="..\estimator\estimator_common.c">
+      <Filter>estimator</Filter>
+    </ClCompile>
+    <ClCompile Include="..\cc\sender_congestion_controller.c">
+      <Filter>cc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\estimator\rate_stat.c">
+      <Filter>estimator</Filter>
+    </ClCompile>
+    <ClCompile Include="..\estimator\remote_bitrate_estimator.c">
+      <Filter>estimator</Filter>
+    </ClCompile>
+    <ClCompile Include="..\cc\receiver_congestion_controller.c">
+      <Filter>cc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\cc\razor_api.c">
+      <Filter>cc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\estimator\cc_loss_stat.c">
+      <Filter>estimator</Filter>
+    </ClCompile>
+    <ClCompile Include="..\cc\razor_log.c">
+      <Filter>cc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\bbr\windowed_filter.c">
+      <Filter>bbr</Filter>
+    </ClCompile>
+    <ClCompile Include="..\bbr\bbr_rtt_stats.c">
+      <Filter>bbr</Filter>
+    </ClCompile>
+    <ClCompile Include="..\bbr\bbr_controller.c">
+      <Filter>bbr</Filter>
+    </ClCompile>
+    <ClCompile Include="..\bbr\bbr_loss_rate_filter.c">
+      <Filter>bbr</Filter>
+    </ClCompile>
+    <ClCompile Include="..\bbr\bbr_bandwidth_sample.c">
+      <Filter>bbr</Filter>
+    </ClCompile>
+    <ClCompile Include="..\bbr\bbr_feedback_adpater.c">
+      <Filter>bbr</Filter>
+    </ClCompile>
+    <ClCompile Include="..\bbr\bbr_common.c">
+      <Filter>bbr</Filter>
+    </ClCompile>
+    <ClCompile Include="..\bbr\bbr_receiver.c">
+      <Filter>bbr</Filter>
+    </ClCompile>
+    <ClCompile Include="..\bbr\bbr_pacer.c">
+      <Filter>bbr</Filter>
+    </ClCompile>
+    <ClCompile Include="..\bbr\bbr_sender.c">
+      <Filter>bbr</Filter>
+    </ClCompile>
+    <ClCompile Include="..\estimator\cc_feedback_adapter.c">
+      <Filter>estimator</Filter>
+    </ClCompile>
+    <ClCompile Include="..\remb\remb_receiver.c">
+      <Filter>remb</Filter>
+    </ClCompile>
+    <ClCompile Include="..\remb\remb_sender.c">
+      <Filter>remb</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\common\cf_crc32.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\common\cf_hex.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\common\cf_list.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\common\cf_platform.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\common\cf_skiplist.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\common\cf_stream.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\common\cf_unwrapper.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\estimator\inter_arrival.h">
+      <Filter>estimator</Filter>
+    </ClInclude>
+    <ClInclude Include="..\estimator\trendline.h">
+      <Filter>estimator</Filter>
+    </ClInclude>
+    <ClInclude Include="..\estimator\kalman_filter.h">
+      <Filter>estimator</Filter>
+    </ClInclude>
+    <ClInclude Include="..\estimator\estimator_common.h">
+      <Filter>estimator</Filter>
+    </ClInclude>
+    <ClInclude Include="..\estimator\aimd_rate_control.h">
+      <Filter>estimator</Filter>
+    </ClInclude>
+    <ClInclude Include="..\estimator\overuse_detector.h">
+      <Filter>estimator</Filter>
+    </ClInclude>
+    <ClInclude Include="..\estimator\remote_estimator_proxy.h">
+      <Filter>estimator</Filter>
+    </ClInclude>
+    <ClInclude Include="..\estimator\sender_bandwidth_estimator.h">
+      <Filter>estimator</Filter>
+    </ClInclude>
+    <ClInclude Include="..\estimator\bitrate_controller.h">
+      <Filter>estimator</Filter>
+    </ClInclude>
+    <ClInclude Include="..\estimator\sender_history.h">
+      <Filter>estimator</Filter>
+    </ClInclude>
+    <ClInclude Include="..\estimator\ack_bitrate_estimator.h">
+      <Filter>estimator</Filter>
+    </ClInclude>
+    <ClInclude Include="..\estimator\delay_base_bwe.h">
+      <Filter>estimator</Filter>
+    </ClInclude>
+    <ClInclude Include="..\pacing\interval_budget.h">
+      <Filter>pacing</Filter>
+    </ClInclude>
+    <ClInclude Include="..\pacing\alr_detector.h">
+      <Filter>pacing</Filter>
+    </ClInclude>
+    <ClInclude Include="..\pacing\pacer_queue.h">
+      <Filter>pacing</Filter>
+    </ClInclude>
+    <ClInclude Include="..\pacing\pace_sender.h">
+      <Filter>pacing</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cc\sender_congestion_controller.h">
+      <Filter>cc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\estimator\remote_bitrate_estimator.h">
+      <Filter>estimator</Filter>
+    </ClInclude>
+    <ClInclude Include="..\estimator\rate_stat.h">
+      <Filter>estimator</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cc\receiver_congestion_controller.h">
+      <Filter>cc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cc\razor_api.h">
+      <Filter>cc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\estimator\cc_loss_stat.h">
+      <Filter>estimator</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cc\razor_log.h">
+      <Filter>cc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cc\razor_callback.h">
+      <Filter>cc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\bbr\windowed_filter.h">
+      <Filter>bbr</Filter>
+    </ClInclude>
+    <ClInclude Include="..\bbr\bbr_rtt_stats.h">
+      <Filter>bbr</Filter>
+    </ClInclude>
+    <ClInclude Include="..\bbr\bbr_controller.h">
+      <Filter>bbr</Filter>
+    </ClInclude>
+    <ClInclude Include="..\bbr\bbr_common.h">
+      <Filter>bbr</Filter>
+    </ClInclude>
+    <ClInclude Include="..\bbr\bbr_feedback_adpater.h">
+      <Filter>bbr</Filter>
+    </ClInclude>
+    <ClInclude Include="..\bbr\bbr_loss_rate_filter.h">
+      <Filter>bbr</Filter>
+    </ClInclude>
+    <ClInclude Include="..\bbr\bbr_bandwidth_sample.h">
+      <Filter>bbr</Filter>
+    </ClInclude>
+    <ClInclude Include="..\bbr\bbr_receiver.h">
+      <Filter>bbr</Filter>
+    </ClInclude>
+    <ClInclude Include="..\bbr\bbr_pacer.h">
+      <Filter>bbr</Filter>
+    </ClInclude>
+    <ClInclude Include="..\bbr\bbr_sender.h">
+      <Filter>bbr</Filter>
+    </ClInclude>
+    <ClInclude Include="..\remb\remb_sender.h">
+      <Filter>remb</Filter>
+    </ClInclude>
+    <ClInclude Include="..\remb\remb_receiver.h">
+      <Filter>remb</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

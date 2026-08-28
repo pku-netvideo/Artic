@@ -1,0 +1,70 @@
+﻿  bbr_bandwidth_sample.c
+  bbr_common.c
+  bbr_controller.c
+D:\scienceWork\razor\bbr\bbr_controller.c(188,37): warning C4244: “=”: 从“int64_t”转换到“int32_t”，可能丢失数据
+D:\scienceWork\razor\bbr\bbr_controller.c(213,36): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+D:\scienceWork\razor\bbr\bbr_controller.c(222,62): warning C4244: “=”: 从“int64_t”转换到“size_t”，可能丢失数据
+D:\scienceWork\razor\bbr\bbr_controller.c(307,25): warning C4018: “<”: 有符号/无符号不匹配
+D:\scienceWork\razor\bbr\bbr_controller.c(708,14): warning C4244: “=”: 从“int64_t”转换到“int32_t”，可能丢失数据
+D:\scienceWork\razor\bbr\bbr_controller.c(736,53): warning C4244: “=”: 从“int64_t”转换到“int32_t”，可能丢失数据
+D:\scienceWork\razor\bbr\bbr_controller.c(815,22): warning C4018: “>=”: 有符号/无符号不匹配
+  bbr_feedback_adpater.c
+  bbr_loss_rate_filter.c
+  bbr_pacer.c
+D:\scienceWork\razor\bbr\bbr_pacer.c(52,30): warning C4244: “=”: 从“float”转换到“uint32_t”，可能丢失数据
+D:\scienceWork\razor\bbr\bbr_pacer.c(59,30): warning C4244: “=”: 从“float”转换到“uint32_t”，可能丢失数据
+D:\scienceWork\razor\bbr\bbr_pacer.c(65,49): warning C4244: “=”: 从“float”转换到“uint32_t”，可能丢失数据
+  bbr_receiver.c
+  bbr_rtt_stats.c
+D:\scienceWork\razor\bbr\bbr_rtt_stats.c(49,57): warning C4244: “=”: 从“double”转换到“int64_t”，可能丢失数据
+D:\scienceWork\razor\bbr\bbr_rtt_stats.c(50,54): warning C4244: “=”: 从“double”转换到“int64_t”，可能丢失数据
+  bbr_sender.c
+D:\scienceWork\razor\bbr\bbr_sender.c(80,48): warning C4244: “=”: 从“int64_t”转换到“uint32_t”，可能丢失数据
+D:\scienceWork\razor\bbr\bbr_sender.c(81,21): warning C4018: “<”: 有符号/无符号不匹配
+D:\scienceWork\razor\bbr\bbr_sender.c(88,41): warning C4244: “=”: 从“double”转换到“uint32_t”，可能丢失数据
+  windowed_filter.c
+  razor_api.c
+  razor_log.c
+  receiver_congestion_controller.c
+  sender_congestion_controller.c
+  cf_crc32.c
+  cf_hex.c
+  cf_list.c
+  cf_skiplist.c
+  cf_stream.c
+D:\scienceWork\razor\common\cf_stream.c(373,9): warning C4267: “return”: 从“size_t”转换到“uint16_t”，可能丢失数据
+  cf_unwrapper.c
+  正在生成代码...
+  正在编译...
+  mscc.c
+D:\scienceWork\razor\common\platform\windows\mscc.c(326,29): warning C4244: “初始化”: 从“uint64_t”转换到“long”，可能丢失数据
+D:\scienceWork\razor\common\platform\windows\mscc.c(326,38): warning C4244: “初始化”: 从“uint64_t”转换到“long”，可能丢失数据
+  ack_bitrate_estimator.c
+  aimd_rate_control.c
+D:\scienceWork\razor\estimator\aimd_rate_control.c(191,17): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+  bitrate_controller.c
+  cc_loss_stat.c
+  delay_base_bwe.c
+D:\scienceWork\razor\estimator\delay_base_bwe.c(96,46): warning C4244: “函数”: 从“int64_t”转换到“double”，可能丢失数据
+  estimator_common.c
+  cc_feedback_adapter.c
+  inter_arrival.c
+  kalman_filter.c
+  overuse_detector.c
+  rate_stat.c
+  remote_bitrate_estimator.c
+  remote_estimator_proxy.c
+  sender_bandwidth_estimator.c
+  sender_history.c
+  trendline.c
+D:\scienceWork\razor\estimator\trendline.c(82,17): warning C4018: “>=”: 有符号/无符号不匹配
+  alr_detector.c
+  interval_budget.c
+  pacer_queue.c
+  正在生成代码...
+  正在编译...
+  pace_sender.c
+  remb_receiver.c
+  remb_sender.c
+  正在生成代码...
+  razor.vcxproj -> D:\scienceWork\razor\sim_test\sim_sender\Debug\razor.lib
