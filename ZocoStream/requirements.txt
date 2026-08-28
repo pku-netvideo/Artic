@@ -1,2 +1,0 @@
-pandas
-volcengine-python-sdk[ark]
