@@ -45,13 +45,19 @@
 ## Requirements
 
 - Python 3.8+
-- `ffmpeg`
-- `kvazaar` with ROI-map support
-- Python packages:
+- For ZeCoStream:
+  - `ffmpeg`
+  - `kvazaar` with ROI-map support
+  - Python packages:
+
 
 ```bash
 pip install -r ZeCoStream/requirements.txt
 ```
+
+- For ReCapABR:
+  - `GCC/G++>=9.0` with `c99, c++17` standards.
+  - `Ubunto 20.04` is suggested.
 
 ## Prepare DeViBench Data
 
@@ -239,3 +245,51 @@ python ZeCoStream/batch_process_robust.py \
 
 - You may need to change --base-url in `generate_roi.py` to match your API endpoint.
 - You can **directly use** the example command above to simulate the performance in our paper.
+
+## Stream Videos with ReCapABR
+
+#### Network emulation with mahi-mahi
+
+Install [**mahi-mahi**](http://mahimahi.mit.edu/) according to the official guide.
+
+Place the uplink and downlink traces in the directory ``` ReCapABR/sim_test/sim_sender```. We provide the example traces ```up.trace``` and ```down.trace``` in ```ReCapABR/example```.
+
+#### Prepare confidence data
+
+> TO BE COMPLETED
+
+#### Start video streaming
+
+First keep the receiver running:
+
+```
+cd ReCapABR/sim_test/sim_receiver
+make
+./recv
+```
+
+Spawn an another process, run the sender:
+
+```
+cd ReCapABR/sim_test/sim_sender
+make
+mm-link ./send up.trace down.trace --downlink-queue=droptail --downlink-queue-args=packets=100 --uplink-queue=droptail --uplink-queue-args=packets=30 -- ./send
+```
+
+In ```sim_sender_test.c```, you can choose between GCC or BBR in```main()```.
+
+#### Evaluation
+
+After terminating the processes, run the following commands to evaluate average delay and bitrate:
+
+```
+cd ReCapABR
+python evaluate/evaluate.py
+```
+
+## Acknowledgement
+
+The core code is based on the following repositories:
+
+* [**razor**](https://github.com/yuanrongxi/razor): Provided the simulation of video streaming with GCC and BBR algorithms;
+* [**mahi-mahi**](http://mahimahi.mit.edu/): Provided a network emulation platform.
