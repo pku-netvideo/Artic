@@ -13,6 +13,8 @@
 |-- README.md
 |-- answer_prompt.txt
 |-- evaluate_prompt.txt
+|-- confidence_prompt.txt
+|-- get_confidence_sample.py
 |-- ZeCoStream/
 |   |-- sampling.py
 |   |-- generate_roi.py
@@ -33,6 +35,8 @@
 
 - `answer_prompt.txt`: prompt used to generate the final answer for a video question.
 - `evaluate_prompt.txt`: prompt used to judge whether a model prediction matches the reference answer.
+- `confidence_prompt.txt`: prompt used to assess confidence for a question-video pair.
+- `get_confidence_sample.py`: example of a single API call for confidence assessment.
 - `ZeCoStream/`: cleaned release version of the ROI prediction and ROI encoding pipeline.
 - ReCapABR is implemented based on [**razor**](https://github.com/yuanrongxi/razor) repository. And the core modifications are in the directory ```ReCapABR/sim_test/sim_send```:
 
@@ -256,7 +260,21 @@ Place the uplink and downlink traces in the directory ``` ReCapABR/sim_test/sim_
 
 #### Prepare confidence data
 
-> TO BE COMPLETED
+For each question-video pair, we calculate confidence by prompting the MLLM with the question and the video encoded at the target bitrate. The score after `###SCORE###` in the model output is used as the confidence value.
+
+The confidence prompt is provided in [`confidence_prompt.txt`](confidence_prompt.txt). [`get_confidence_sample.py`](get_confidence_sample.py) provides an example of a single Ark API call.
+
+Install the Ark Python SDK, set your API key in `get_confidence_sample.py`, replace `{question}` in the prompt, and run:
+
+```bash
+pip install volcengine-python-sdk[ark]
+
+python get_confidence_sample.py \
+  -video_path /path/to/encoded_video.mp4 \
+  -prompt "$(< /path/to/filled_confidence_prompt.txt)"
+```
+
+For convenient experimentation, we provide the precomputed confidence table in [`ReCapABR/sim_test/sim_sender/confidence.csv`](ReCapABR/sim_test/sim_sender/confidence.csv).
 
 #### Start video streaming
 
