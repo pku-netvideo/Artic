@@ -2,7 +2,7 @@
 
 ## TODO List
 
-- [ ] ReCapABR
+- [x] ReCapABR
 - [x] ZeCoStream
 - [x] DeViBench
 
